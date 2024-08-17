@@ -18,7 +18,7 @@ import { SortAlphaPipe } from '../../pipes/sort-alpha.pipe';
     SortPipe,
     SortAlphaPipe,
     ProductItemComponent,
-    StarRatingComponent
+    StarRatingComponent,
   ],
   imports: [
     CommonModule,
