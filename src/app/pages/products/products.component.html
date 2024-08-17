@@ -1,0 +1,72 @@
+<div class="mx-8 my-16">
+  <div class="border border-gray-300 rounded-lg p-6 mx-auto">
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <div class="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-16">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900">New Products</h1>
+
+
+      </div>
+
+      <section aria-labelledby="products-heading" class="pb-24 pt-6">
+
+        <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+          <form class="lg:block">
+            <h3 class="sr-only">Categories</h3>
+            <ul role="list" class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+              <li>
+                <a href="#">Totes</a>
+              </li>
+              <li>
+                <a href="#">Backpacks</a>
+              </li>
+              <li>
+                <a href="#">Travel Bags</a>
+              </li>
+              <li>
+                <a href="#">Hip Bags</a>
+              </li>
+              <li>
+                <a href="#">Laptop Sleeves</a>
+              </li>
+
+            </ul>
+          </form>
+
+          <div class="lg:col-span-3">
+
+              <div class="mx-auto max-w-2xl lg:max-w-7xl">
+                <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                  <div class="group relative" *ngFor="let item of fakeapi.list">
+                    <div class="aspect-square w-full overflow-hidden rounded-md  group-hover:opacity-75">
+                      <img [src]="item.image"
+                        alt="{{item.title}}"
+                        class="h-full w-full object-contain object-center">
+                    </div>
+                    <div class="mt-4 flex justify-between">
+                      <div>
+                        <h3 class="text-sm text-gray-700">
+                          <a href="#">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            {{item.title}}
+                          </a>
+                        </h3>
+                        <p class="mt-1 text-sm text-gray-500">Black</p>
+                      </div>
+                      <p class="text-sm font-medium text-gray-900">$35</p>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+</div>
