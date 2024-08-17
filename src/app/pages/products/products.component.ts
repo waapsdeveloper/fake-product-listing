@@ -8,12 +8,25 @@ import { FakeApiService } from '../../services/fake-api.service';
 })
 export class ProductsComponent {
 
+  list: any[] = [];
   constructor(public fakeapi: FakeApiService){
     this.initialize()
   }
 
   async initialize(){
-    const res = await this.fakeapi.getProducts();
+    await this.fakeapi.getCategories();
+    this.list = await this.fakeapi.getProducts();
+  }
+
+  async productsByCategory(cat: any){
+
+    console.log(cat)
+
+    // URL encode the category name
+    this.list = await this.fakeapi.getProductsByCategory(cat);
+
+
+
   }
 
 

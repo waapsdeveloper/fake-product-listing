@@ -7,19 +7,63 @@ import { NetworkService } from './network.service';
 export class FakeApiService {
 
   list: any[] = [];
+  categories: any[] = [];
   constructor(public network: NetworkService) { }
 
-  async getProducts(limit = 100, offset = 0){
+  async getCategories(){
 
-    let params = {
-      limit,
-      offset
-    }
-
-    const res = await this.network.getProducts(params);
+    const res = await this.network.getCategories();
     console.log(res);
 
-    this.list = res;
+    let cats = res.map( (x: any, index: number) => {
+      return {
+        id: index,
+        name: x
+      }
+    });
+
+    cats.unshift({
+      id: 0,
+      name: 'All'
+    })
+
+
+    this.categories = cats;
+
+  }
+
+  getProducts(sort = 'asc'): Promise<any[]>{
+
+    return new Promise( async resolve => {
+      let params = {
+        sort,
+      }
+
+      const res = await this.network.getProducts(params);
+      console.log(res);
+
+      this.list = res;
+      resolve(res)
+    })
+
+
+  }
+
+  async getProductsByCategory(cat: any): Promise<any[]>{
+
+    return new Promise( resolve => {
+
+      if(cat.name == 'All'){
+        resolve(this.list);
+        return;
+      }
+      console.log(cat)
+      const res = this.list.filter( x => x.category == cat.name);
+      console.log(res);
+      resolve(res);
+
+    })
+
 
   }
 

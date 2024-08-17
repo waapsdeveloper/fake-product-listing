@@ -18,6 +18,14 @@ export class NetworkService {
     return this.httpGetResponse(`products?${str}`, null)
   }
 
+  getProductsByCategory(name: string){
+    return this.httpGetResponse(`products/${name}`, null)
+  }
+
+  getCategories(){
+    return this.httpGetResponse('products/categories')
+  }
+
 
   serialize = (obj: any) => {
     const str: any[] = [];
