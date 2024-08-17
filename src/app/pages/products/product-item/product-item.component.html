@@ -1,9 +1,7 @@
-<div class="aspect-square w-full overflow-hidden rounded-md  group-hover:opacity-75">
-  <img [src]="item.image"
-    alt="{{item.title}}"
-    class="h-full w-full object-contain object-center">
+<div class="aspect-square w-full overflow-hidden rounded-md  group-hover:opacity-75" >
+  <img  [src]="item.image" alt="{{item.title}}" class="h-full w-full object-contain object-center">
 </div>
-<div class="mt-4 flex justify-between">
+<div class="mt-4 flex justify-between" (click)="toggleModal()">
   <div>
     <h3 class="text-sm text-gray-700">
       <a href="#">
@@ -17,4 +15,38 @@
 
   </div>
   <p class="text-sm font-medium text-gray-900">{{item.price}}</p>
+</div>
+<div *ngIf="isModalVisible" class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-background"></div>
+    
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="aspect-square w-full overflow-hidden rounded-md group-hover:opacity-75">
+          <img [src]="item.image" alt="{{item.title}}" class="h-full w-full object-contain object-center">
+        </div>
+        <div class="mt-4 flex justify-between content">
+          <div>
+            <h3 class="text-sm text-gray-700">
+              <a href="#">
+                <span aria-hidden="true" class="absolute inset-0"></span>
+                {{item.title}}
+              </a>
+            </h3>
+            <div class="grid">
+              <!-- <app-star-rating [rating]="5" [totalRatings]="12"></app-star-rating> -->
+            </div>
+          </div>
+          <p class="text-sm font-medium text-gray-900">{{item.price}}</p>
+          <div>
+            <p>{{item.description}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-button cancel-button" (click)="toggleModal()">Close</button>
+        <button class="modal-button create-button">Create</button>
+      </div>
+    </div>
+  </div>
 </div>

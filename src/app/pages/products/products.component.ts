@@ -7,7 +7,7 @@ import { FakeApiService } from '../../services/fake-api.service';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-
+  isCategoriesVisible = true;
   searchTerm: string = '';
   isOpen = false;
   list: any[] = [];
@@ -18,6 +18,9 @@ export class ProductsComponent {
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
+  }
+   toggleCategories() {
+    this.isCategoriesVisible = !this.isCategoriesVisible; // Toggle the visibility
   }
 
   async initialize(){

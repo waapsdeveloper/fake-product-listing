@@ -8,4 +8,10 @@ import { Component, Input } from '@angular/core';
 export class ProductItemComponent {
 
   @Input('item') item: any;
+  isModalVisible = false;
+
+  toggleModal() {
+    this.isModalVisible = !this.isModalVisible;
+  }
+  
 }

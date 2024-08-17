@@ -3,3 +3,33 @@
   border-radius: 5px; /* Slightly rounded corners */
   padding: 10px; /* Optional: Adds some space inside the border */
 }
+.toggle-category{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.category-name {
+  /* Initial styles for the anchor tag */
+  background-color: transparent;
+  color: inherit; /* Inherit text color from parent */
+  text-decoration: none; /* Remove underline */
+  padding: 4px 8px; /* Add some padding if needed */
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.category-name:hover {
+  background-color: red; /* Change background color on hover */
+  border-radius: 5px;
+  margin-left: 5px;
+  width: 100%;
+  color: white; /* Optionally, change text color on hover */
+}
+

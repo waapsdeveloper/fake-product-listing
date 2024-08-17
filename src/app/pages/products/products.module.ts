@@ -16,7 +16,7 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     FilterPipe,
     SortPipe,
     ProductItemComponent,
-    StarRatingComponent,
+    StarRatingComponent
   ],
   imports: [
     CommonModule,
