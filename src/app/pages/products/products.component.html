@@ -29,7 +29,7 @@
               <a href="javascript:void(0)" (click)="setProductSort('')"
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Reset</a>
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -42,17 +42,29 @@
                 <img *ngIf="!isCategoriesVisible" src="../../../assets/svg/add-left.svg" alt="">
               </h3>
               <ul *ngIf="isCategoriesVisible" role="list"
-              class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900 p-1">
-              <li *ngFor="let cat of fakeapi.categories" (click)="productsByCategory(cat)">
-                <a href="javascript:void(0)" class="category-name">{{cat.name}}</a>
-              </li>
-            </ul>
-          </div>
+                class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900 p-1">
+                <li *ngFor="let cat of fakeapi.categories" (click)="productsByCategory(cat)">
+                  <a href="javascript:void(0)" class="category-name">{{cat.name}}</a>
+                </li>
+              </ul>
+
+            </div>
+            <div class="toggle-category">
+              <h3 (click)="toggleCategories()" class="cursor-pointer category-button">Sort By Alphabet
+                <img *ngIf="isCategoriesVisible" src="../../../assets/svg/add.svg" alt="">
+                <img *ngIf="!isCategoriesVisible" src="../../../assets/svg/add-left.svg" alt="">
+              </h3>
+              <ul *ngIf="isCategoriesVisible" role="list"
+                class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900 p-1">
+
+              </ul>
+
+            </div>
           </form>
           <div class="lg:col-span-3">
             <div class="mx-auto max-w-2xl lg:max-w-7xl">
               <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                <div class="group relative" *ngFor="let item of list | filter: searchTerm | sort: 'price': sortOrder">
+                <div class="group relative" *ngFor="let item of list | filter: searchTerm | sort: 'price': sortOrder | sortAlpha: 'title': sortOrderAlpha">
                   <app-product-item [item]="item"></app-product-item>
                 </div>
               </div>
@@ -62,5 +74,5 @@
       </section>
     </main>
   </div>
-  
+
 </div>

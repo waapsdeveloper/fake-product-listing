@@ -12,6 +12,7 @@ export class ProductsComponent {
   isOpen = false;
   list: any[] = [];
   sortOrder: string = '';  // Default sort order
+  sortOrderAlpha: string = '';
   constructor(public fakeapi: FakeApiService){
     this.initialize()
   }

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SortPipe } from '../../pipes/sort.pipe';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
+import { SortAlphaPipe } from '../../pipes/sort-alpha.pipe';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     ProductsComponent,
     FilterPipe,
     SortPipe,
+    SortAlphaPipe,
     ProductItemComponent,
     StarRatingComponent
   ],
