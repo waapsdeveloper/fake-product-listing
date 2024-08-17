@@ -8,9 +8,16 @@ import { FakeApiService } from '../../services/fake-api.service';
 })
 export class ProductsComponent {
 
+  searchTerm: string = '';
+  isOpen = false;
   list: any[] = [];
+  sortOrder: string = '';  // Default sort order
   constructor(public fakeapi: FakeApiService){
     this.initialize()
+  }
+
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
   }
 
   async initialize(){
@@ -24,6 +31,20 @@ export class ProductsComponent {
 
     // URL encode the category name
     this.list = await this.fakeapi.getProductsByCategory(cat);
+
+  }
+
+  async setProductSort(type: string){
+    this.toggleDropdown()
+    // this.list = await this.fakeapi.getProducts(type);
+    this.sortOrder = type;
+  }
+
+  doSearch($event: any){
+    let v = $event.target.value;
+    console.log(v);
+
+
 
 
 

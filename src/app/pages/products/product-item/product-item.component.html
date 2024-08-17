@@ -1,0 +1,20 @@
+<div class="aspect-square w-full overflow-hidden rounded-md  group-hover:opacity-75">
+  <img [src]="item.image"
+    alt="{{item.title}}"
+    class="h-full w-full object-contain object-center">
+</div>
+<div class="mt-4 flex justify-between">
+  <div>
+    <h3 class="text-sm text-gray-700">
+      <a href="#">
+        <span aria-hidden="true" class="absolute inset-0"></span>
+        {{item.title}}
+      </a>
+    </h3>
+    <div class="grid">
+      <!-- <app-star-rating [rating]="4" [totalRatings]="123"></app-star-rating> -->
+    </div>
+
+  </div>
+  <p class="text-sm font-medium text-gray-900">{{item.price}}</p>
+</div>

@@ -1,0 +1,18 @@
+<div class="flex items-center space-x-1">
+  <ng-container *ngFor="let star of getStars(); let i = index">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+      <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24H14.81L12 2 9.19 9.24H2 7.46 5.82 3.01 9.64 7.27L12 17.27z" />
+    </svg>
+  </ng-container>
+  <ng-container *ngFor="let star of getStars(); let i = index; else emptyStar">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+      <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24H14.81L12 2 9.19 9.24H2 7.46 5.82 3.01 9.64 7.27L12 17.27z" />
+    </svg>
+  </ng-container>
+  <ng-template #emptyStar>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24" stroke="none">
+      <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24H14.81L12 2 9.19 9.24H2 7.46 5.82 3.01 9.64 7.27L12 17.27z" />
+    </svg>
+  </ng-template>
+</div>
+<p class="text-gray-500 text-sm mt-1">{{ totalRatings }} {{ totalRatings === 1 ? 'rating' : 'ratings' }}</p>

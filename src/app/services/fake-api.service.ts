@@ -10,6 +10,7 @@ export class FakeApiService {
   categories: any[] = [];
   constructor(public network: NetworkService) { }
 
+
   async getCategories(){
 
     const res = await this.network.getCategories();
@@ -18,13 +19,15 @@ export class FakeApiService {
     let cats = res.map( (x: any, index: number) => {
       return {
         id: index,
-        name: x
+        name: x,
+        selected: false
       }
     });
 
     cats.unshift({
       id: 0,
-      name: 'All'
+      name: 'All',
+      selected: false
     })
 
 
@@ -32,7 +35,7 @@ export class FakeApiService {
 
   }
 
-  getProducts(sort = 'asc'): Promise<any[]>{
+  getProducts(sort = ''): Promise<any[]>{
 
     return new Promise( async resolve => {
       let params = {
@@ -66,6 +69,7 @@ export class FakeApiService {
 
 
   }
+
 
 
 
