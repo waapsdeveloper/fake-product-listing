@@ -14,7 +14,7 @@
     </div>
 
   </div>
-  <p class="text-sm font-medium text-gray-900">{{item.price}}</p>
+  <p class="text-sm font-medium text-gray-900">${{item.price}}</p>
 </div>
 <div *ngIf="isModalVisible" class="modal-overlay">
   <div class="modal-container">
@@ -37,7 +37,7 @@
               <!-- <app-star-rating [rating]="5" [totalRatings]="12"></app-star-rating> -->
             </div>
           </div>
-          <p class="text-sm font-medium text-gray-900">{{item.price}}</p>
+          <p class="text-sm font-medium text-gray-900">${{item.price}}</p>
           <div>
             <p>{{item.description}}</p>
           </div>

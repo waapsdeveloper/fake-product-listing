@@ -7,7 +7,9 @@ import { FakeApiService } from '../../services/fake-api.service';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-  isCategoriesVisible = true;
+  isCategoriesVisible = false;
+  isAlphaVisible = false;
+  isPriseVisible = false;
   searchTerm: string = '';
   isOpen = false;
   list: any[] = [];
@@ -23,6 +25,13 @@ export class ProductsComponent {
    toggleCategories() {
     this.isCategoriesVisible = !this.isCategoriesVisible; // Toggle the visibility
   }
+  toggleAplha() {
+    this.isAlphaVisible = !this.isAlphaVisible; // Toggle the visibility
+  }
+  togglePrise(){
+    this.isPriseVisible = !this.isPriseVisible; // Toggle the visibility
+
+  }
 
   async initialize(){
     await this.fakeapi.getCategories();
@@ -30,12 +39,8 @@ export class ProductsComponent {
   }
 
   async productsByCategory(cat: any){
-
     console.log(cat)
-
-    // URL encode the category name
     this.list = await this.fakeapi.getProductsByCategory(cat);
-
   }
 
   async setProductSort(type: string){
@@ -48,11 +53,14 @@ export class ProductsComponent {
     let v = $event.target.value;
     console.log(v);
 
-
-
-
-
   }
+
+  async productsByAlpha(order: string) {
+    this.sortOrderAlpha = order;
+    // Assuming you fetch and set products based on alphabetical order in the component
+     // Replace with appropriate method if needed
+  }
+  
 
 
 }
