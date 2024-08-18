@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FakeApiService } from '../../../services/fake-api.service';
+import { FakeApiService } from '../../services/fake-api.service';
 
 @Component({
   selector: 'app-sort-by-alpha',
