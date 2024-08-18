@@ -1,0 +1,18 @@
+<div class="toggle-category">
+  <h3 (click)="togglePrice()" class="cursor-pointer category-button">Sort By Price
+    <img *ngIf="isPriceVisible" src="../../../assets/svg/add.svg" alt="">
+    <img *ngIf="!isPriceVisible" src="../../../assets/svg/add-left.svg" alt="">
+  </h3>
+  <ul *ngIf="isPriceVisible" role="list"
+    class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900 p-1">
+    <li [class.active-category]="sortOrderPrice == 'asc'">
+      <a href="javascript:void(0)" (click)="productsByPrice('asc')" class="category-name">Low to High</a>
+    </li>
+    <li [class.active-category]="sortOrderPrice == 'desc'">
+      <a href="javascript:void(0)" (click)="productsByPrice('desc')" class="category-name">High to Low</a>
+    </li>
+    <li [class.active-category]="sortOrderPrice == ''">
+      <a href="javascript:void(0)" (click)="productsByPrice('')" class="category-name">Reset</a>
+    </li>
+  </ul>
+</div>

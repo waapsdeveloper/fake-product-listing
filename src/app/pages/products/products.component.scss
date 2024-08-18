@@ -3,19 +3,7 @@
   border-radius: 5px; /* Slightly rounded corners */
   padding: 10px; /* Optional: Adds some space inside the border */
 }
-.toggle-category{
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 8px;
-}
 
-.category-button{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
 .category-name {
   /* Initial styles for the anchor tag */
   background-color: transparent;

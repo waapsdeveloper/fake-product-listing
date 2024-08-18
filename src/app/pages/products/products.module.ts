@@ -9,6 +9,9 @@ import { SortPipe } from '../../pipes/sort.pipe';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { SortAlphaPipe } from '../../pipes/sort-alpha.pipe';
+import { FilterCategoryComponent } from './filter-category/filter-category.component';
+import { SortByAlphaComponent } from './sort-by-alpha/sort-by-alpha.component';
+import { SortByPriceComponent } from './sort-by-price/sort-by-price.component';
 
 
 @NgModule({
@@ -19,6 +22,9 @@ import { SortAlphaPipe } from '../../pipes/sort-alpha.pipe';
     SortAlphaPipe,
     ProductItemComponent,
     StarRatingComponent,
+    FilterCategoryComponent,
+    SortByAlphaComponent,
+    SortByPriceComponent,
   ],
   imports: [
     CommonModule,

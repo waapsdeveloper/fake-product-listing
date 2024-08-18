@@ -18,6 +18,10 @@ export class NetworkService {
     return this.httpGetResponse(`products?${str}`, null)
   }
 
+  getProductById(id: any){
+    return this.httpGetResponse(`products`, id)
+  }
+
   getProductsByCategory(name: string){
     return this.httpGetResponse(`products/${name}`, null)
   }

@@ -11,6 +11,22 @@ export class FakeApiService {
   constructor(public network: NetworkService) { }
 
 
+  async setSelectedCategories(cat: any){
+
+    return new Promise( resolve => {
+
+
+      this.categories.forEach(category => category.selected = false);
+
+      let index = this.categories.findIndex(x => x.name == cat.name)
+      if(index != -1){
+        this.categories[index].selected = true;
+        resolve(this.categories[index])
+      }
+
+    })
+
+  }
   async getCategories(){
 
     const res = await this.network.getCategories();
@@ -64,6 +80,19 @@ export class FakeApiService {
       const res = this.list.filter( x => x.category == cat.name);
       console.log(res);
       resolve(res);
+
+    })
+
+
+  }
+
+  async getProductByid(id: any): Promise<any[]>{
+
+    return new Promise( async resolve => {
+
+      const res = await this.network.getProductById(id);
+      console.log(res);
+      resolve(res)
 
     })
 

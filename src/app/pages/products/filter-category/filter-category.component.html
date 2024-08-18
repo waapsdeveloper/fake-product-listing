@@ -1,0 +1,13 @@
+<div class="toggle-category">
+  <h3 (click)="toggleCategories()" class="cursor-pointer category-button">Categories
+    <img *ngIf="isCategoriesVisible" src="../../../assets/svg/add.svg" alt="">
+    <img *ngIf="!isCategoriesVisible" src="../../../assets/svg/add-left.svg" alt="">
+  </h3>
+  <ul *ngIf="isCategoriesVisible" role="list"
+    class="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900 p-1">
+    <li *ngFor="let cat of fakeapi.categories" (click)="productsByCategory(cat)" [class.active-category]="cat.selected == true">
+      <a href="javascript:void(0)" class="category-name">{{cat.name}}</a>
+    </li>
+  </ul>
+
+</div>
