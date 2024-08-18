@@ -18,7 +18,6 @@ export class ProductDetailComponent {
 
   async initialize(){
     const params = await this.activatedRoute.snapshot.params;
-    console.log(params)
 
     if(params['id']){
       const res = await this.fakeapi.getProductByid(params['id']);

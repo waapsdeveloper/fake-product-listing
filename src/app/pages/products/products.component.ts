@@ -10,24 +10,13 @@ import { NavService } from '../../services/nav.service';
 export class ProductsComponent {
 
 
-  isPriseVisible = false;
   searchTerm: string = '';
-  isOpen = false;
   list: any[] = [];
   sortOrder: string = '';  // Default sort order
   sortOrderAlpha: string = '';
+
   constructor(public fakeapi: FakeApiService, public nav: NavService){
     this.initialize()
-  }
-
-  toggleDropdown() {
-    this.isOpen = !this.isOpen;
-  }
-
-
-  togglePrise(){
-    this.isPriseVisible = !this.isPriseVisible; // Toggle the visibility
-
   }
 
   async initialize(){
@@ -40,7 +29,6 @@ export class ProductsComponent {
   }
 
   async productsByCategory(cat: any){
-    console.log(cat)
     this.list = await this.fakeapi.getProductsByCategory(cat);
   }
 
@@ -51,17 +39,6 @@ export class ProductsComponent {
   async setProductSortAlpha(type: string){
     this.sortOrderAlpha = type;
   }
-
-
-
-  doSearch($event: any){
-    let v = $event.target.value;
-    console.log(v);
-
-  }
-
-
-
 
 
 }
